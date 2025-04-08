@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  border-top: 4px solid #6a5acd;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #6a5acd;
+  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+}
+
+input[type="submit"] {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #5a4abf;
+}
+
+form br {
+  display: none;
+}
+
+form {
+  position: relative;
+}
+
+form::before {
+  content: "Iris Prediction Model";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Result styling */
+form::after {
+  position: absolute;
+  bottom: 70px;
+  right: 2rem;
+  padding: 5px 10px;
+  background-color: #f0f8ff;
+  border-radius: 4px;
+  border-left: 3px solid #6a5acd;
+  font-weight: 500;
+}
+/* Toggle Text Styling */
+.toggle-text {
+  display: block; /* Place it on its own line */
+  width: fit-content; /* Automatically adjust width to fit the text */
+  margin-bottom: 20px; /* Add space below so it's separated from other elements */
+  background-color: #ffffff; /* White background */
+  color: #6a5acd; /* Black text */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  text-decoration: none; /* Remove underline if any */
+  font-size: 16px; /* Set a base font size */
+}
+
+/* Hover effect (optional) */
+.toggle-text:hover {
+  text-decoration: underline; /* Underline on hover to indicate interactivity */
+}
+
+/* Toggle Content Styling */
+#projectDetails {
+  display: none; /* Content is hidden by default */
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #d2cef0;
+  margin-bottom: 20px;
+}

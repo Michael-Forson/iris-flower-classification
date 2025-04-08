@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Prediction Model</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form action="/predict" method="post">
+      <a
+        href="javascript:void(0)"
+        id="toggleText"
+        class="toggle-text"
+        onclick="toggleContent()"
+        >Show Project Overview</a
+      >
+      <div id="projectDetails" class="content">
+        <h3>Project Overview</h3>
+        <p>
+          This project is a machine learning model built to classify iris
+          flowers into three species: Setosa, Versicolor, and Virginica, based
+          on the dimensions of their sepals and petals. The dataset used is the
+          Iris dataset, commonly used for classification tasks.
+        </p>
+      </div>
+      <br />
+      <label for="sepal_length" class="sepal">Sepal Length:</label>
+      <input
+        type="text"
+        name="sepal_length"
+        id="sepal_length"
+        placeholder="e.g. 4.3 - 7.9"
+      />
+
+      <label for="sepal_width">Sepal Width:</label>
+      <input
+        type="text"
+        name="sepal_width"
+        id="sepal_width"
+        placeholder="e.g. 2.0 - 4.4"
+      />
+
+      <label for="petal_length">Petal Length:</label>
+      <input
+        type="text"
+        name="petal_length"
+        id="petal_length"
+        placeholder="e.g. 1.0 - 6.9"
+      />
+
+      <label for="petal_width">Petal Width:</label>
+      <input
+        type="text"
+        name="petal_width"
+        id="petal_width"
+        placeholder="e.g. 0.1 - 2.5"
+      />
+
+      {% if result %}
+      <div class="result">
+        Predicted Class:
+        <span style="color: green; font-weight: bold">{{ result }}</span>
+      </div>
+      {% endif %}
+
+      <br />
+      <input type="submit" value="Predict" />
+    </form>
+
+    <script>
+      function toggleContent() {
+        var contentDiv = document.getElementById("projectDetails");
+        var toggleLink = document.getElementById("toggleText");
+
+        // Toggle the display style: block if hidden, none if visible.
+        if (
+          contentDiv.style.display === "none" ||
+          contentDiv.style.display === ""
+        ) {
+          contentDiv.style.display = "block";
+          toggleLink.textContent = "Hide Project Overview";
+        } else {
+          contentDiv.style.display = "none";
+          toggleLink.textContent = "Show Project Overview";
+        }
+      }
+    </script>
+  </body>
+</html>
